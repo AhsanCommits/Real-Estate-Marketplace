@@ -1,17 +1,22 @@
-import React from 'react'
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import Home from './pages/Home'
+import About from './pages/About'
+import SignIn from './pages/SignIn'
+import SignUp from './pages/SignUp'
+import Profile from './pages/Profile'
 
 const App = () => {  
-  console.log('Hello world!') 
-  console.log('This is a test log message.')
-  console.log('This is another test log message.')
-  console.log('This is a third test log message.')
-  console.log('This is a fourth test log message.')
   return (
-    <>
-      <h1 class="text-red-500">
-        Hello world!
-      </h1>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home/>} />
+        <Route path="/about" element={<About />} />
+        <Route path="/sign-in" element={<SignIn />} />
+        <Route path="/sign-up" element={<SignUp/>} />
+        <Route path="/profile" element={<Profile/>} />
+        <Route path="*" element={<h1>404 Not Found</h1>} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
